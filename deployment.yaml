@@ -56,20 +56,3 @@ spec:
     targetPort: 80
   selector:
     app: gotify
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: gotify
-  namespace: default
-  labels:
-    app: gotify
-    app.kubernetes.io/instance: gotify
-    app.kubernetes.io/name: gotify
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 1Gi
-  storageClassName: longhorn
