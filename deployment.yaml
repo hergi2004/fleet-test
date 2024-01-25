@@ -38,21 +38,3 @@ spec:
       - name: gotify
         persistentVolumeClaim:
           claimName: gotify
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: gotify
-  labels:
-    app: gotify
-    app.kubernetes.io/instance: gotify
-    app.kubernetes.io/name: gotify
-spec:
-  type: ClusterIP
-  ports:
-  - name: http
-    port: 80
-    protocol: TCP
-    targetPort: 80
-  selector:
-    app: gotify
